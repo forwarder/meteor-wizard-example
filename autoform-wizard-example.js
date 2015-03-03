@@ -74,19 +74,17 @@ if (Meteor.isClient) {
       return 'disabled';
     }
   });
-  
+
   Template.order.helpers({
     steps: function() {
       return [{
         id: 'contact-information',
         title: 'Contact information',
-        template: 'contactInformation',
-        formId: 'contact-information-form'
+        schema: Schema.contactInformation
       }, {
         id: 'payment-information',
         title: 'Payment & confirm',
-        template: 'paymentInformation',
-        formId: 'payment-information-form',
+        schema: Schema.paymentInformation,
         onSubmit: function(data, wizard) {
           var self = this;
           Orders.insert(_.extend(wizard.mergedData(), data), function(err, id) {

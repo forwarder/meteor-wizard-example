@@ -6,12 +6,12 @@
   <div class="main container">
     <h1>Autoform-wizard example app</h1>
     
-    {{>yield}}
+    {{> yield}}
   </div>
 </template>
 
 <template name="order">
-  {{> wizard id="order" route="order" steps=steps stepsTemplate="steps" clearOnDestroy=true}}
+  {{> wizard id="order" route="order" steps=steps stepsTemplate="steps" buttonClasses="ui submit button" clearOnDestroy=true}}
 </template>
 
 <template name="contactInformation">
@@ -35,7 +35,7 @@
       {{#if icon}}<i class="info icon"></i>{{/if}}
       <div class="content">
       {{#if wizard.route}}
-        <a href="{{pathFor wizard.route step=id}}" class="title">{{title}}</a>
+        <a href="{{pathForStep id}}" class="title">{{title}}</a>
       {{else}}
         <div class="title">{{title}}</div>
       {{/if}}
