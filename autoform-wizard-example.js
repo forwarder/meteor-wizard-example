@@ -57,6 +57,14 @@ Orders.attachSchema([
 
 if (Meteor.isClient) {
   
+  Meteor.startup(function() {
+    AutoForm.setDefaultTemplate("semanticUI");
+    
+    Template.afCheckbox_semanticUI.onRendered(function() {
+      $(this.firstNode).checkbox();
+    });
+  });
+  
   Template.registerHelper('Schema', function() {
     return Schema;
   });
@@ -80,11 +88,13 @@ if (Meteor.isClient) {
       return [{
         id: 'contact-information',
         title: 'Contact information',
-        schema: Schema.contactInformation
+        schema: Schema.contactInformation,
+        // template: 'contactInformation'
       }, {
         id: 'payment-information',
         title: 'Payment & confirm',
         schema: Schema.paymentInformation,
+        // template: 'paymentInformation',
         onSubmit: function(data, wizard) {
           var self = this;
           Orders.insert(_.extend(wizard.mergedData(), data), function(err, id) {
@@ -100,7 +110,7 @@ if (Meteor.isClient) {
       }];
     }
   });
-  
+
 }
 
 Router.configure({

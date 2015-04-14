@@ -15,11 +15,13 @@
 </template>
 
 <template name="contactInformation">
-  {{> quickForm id="contact-information-form" doc=this.data schema=Schema.contactInformation}}
+  {{> quickForm id="contact-information-form" doc=this.step.data schema=Schema.contactInformation}}
+  
+  {{> __wizard_nav}}
 </template>
 
 <template name="paymentInformation">
-  {{> quickForm id="payment-information-form" doc=this.data schema=Schema.paymentInformation}}
+  {{> quickForm id="payment-information-form" doc=this.step.data schema=Schema.paymentInformation}}
 </template>
 
 <template name="viewOrder">

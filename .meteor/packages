@@ -11,6 +11,5 @@ aldeed:simple-schema
 iron:router
 aldeed:collection2
 forwarder:autoform-wizard
-nooitaf:semantic-ui
-jameslefrere:autoform-semantic-ui
-
+semantic:ui-css
+fabienb4:autoform-semantic-ui
