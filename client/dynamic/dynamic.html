@@ -1,0 +1,20 @@
+<template name="dynamicFields">
+  {{> wizard id="dynamic-fields" steps=steps stepsTemplate="steps_semanticUI" buttonClasses="ui button"}}
+</template>
+
+<template name="dynamicStep2">
+  {{#autoForm id="dynamic-step2-form" schema=step.schema}}
+    
+    {{#each dynamicFields}}
+      <div class="ui vertical segment">
+        <h3 class="ui header">Dynamic fields {{index}}</h3>
+        {{> afQuickField name=name}}
+      </div>
+    {{/each}}
+    
+    <button type="button" class="wizard-back-button ui button">Back</button>
+    
+    <button type="submit" class="wizard-next-button ui button">Submit</button>
+
+  {{/autoForm}}
+</template>

@@ -3,13 +3,14 @@
 # 'meteor add' and 'meteor remove' will edit this file for you,
 # but you can also edit it by hand.
 
-meteor-platform
-autopublish
-insecure
+accounts-password
 aldeed:autoform
-aldeed:simple-schema
-iron:router
-aldeed:collection2
+aldeed:collection2       
 forwarder:autoform-wizard
+iron:router                
+less
+meteor-platform            
+momentjs:moment  
 semantic:ui-css
 fabienb4:autoform-semantic-ui
+forwarder:autoform-wizard-iron-router

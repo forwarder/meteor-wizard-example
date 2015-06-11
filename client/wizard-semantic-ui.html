@@ -1,0 +1,16 @@
+<template name="steps_semanticUI">
+  <div class="ui two steps">
+  {{#each wizard.steps}}
+    <div class="{{stepClass id}} step">
+      {{#if icon}}<i class="info icon"></i>{{/if}}
+      <div class="content">
+      {{#if wizard.route}}
+        <a href="{{pathForStep id}}" class="title">{{title}}</a>
+      {{else}}
+        <div class="title">{{title}}</div>
+      {{/if}}
+      </div>
+    </div>
+  {{/each}}
+  </div>
+</template>

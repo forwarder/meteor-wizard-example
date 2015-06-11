@@ -1,0 +1,16 @@
+<head>
+  <title>Autoform-wizard example app</title>
+</head>
+
+<template name="layout">
+  <div class="main container">
+    <h1>Autoform-wizard example app</h1>
+    
+    <div class="ui purple inverted menu">
+      <a href="{{pathFor route='order'}}" class="ui item">Basic</a>
+      <a href="{{pathFor route='dynamic'}}" class="ui item">Dynamic</a>
+    </div>
+    
+    {{> yield}}
+  </div>
+</template>
