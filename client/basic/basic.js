@@ -53,7 +53,7 @@ Orders.attachSchema([
   Schemas.paymentInformation
 ]);
 
-Template.order.helpers({
+Template.basic.helpers({
   steps: function() {
     return [{
       id: 'contact-information',
@@ -81,11 +81,11 @@ Template.order.helpers({
 
 Wizard.useRouter('iron:router');
 
-Router.route('/order/:step?', {
-  name: 'order',
+Router.route('/basic/:step?', {
+  name: 'basic',
   onBeforeAction: function() {
     if (!this.params.step) {
-      this.redirect('order', {
+      this.redirect('basic', {
         step: 'contact-information'
       });
     } else {
